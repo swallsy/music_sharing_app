@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 class PlayListForm extends Component {
 
-
   constructor(props) {
     super(props)
 
@@ -22,17 +21,6 @@ class PlayListForm extends Component {
     this.setState(newState);
   }
 
-  // handleNameChange () {
-  //   let userName = (e) => {
-  //     this.setState({userName: e.target.value})
-  //   }
-  // }
-
-  // handleArtistUpdate () {
-  //   let songArtist = (e) => {
-  //     this.setState({songArtist: e.target.value})
-  //   }
-  // }
 
   handleSubmit (e) {
 
@@ -60,8 +48,8 @@ class PlayListForm extends Component {
 
   render () {
     return (
-      <div id="playlistform-wrapper" className="col-md-5">
-        <form onSubmit={this.handleSubmit} action={this.handleSubmit}>
+      <div id="playlistform-wrapper" className="col-md-5 offset-md-1">
+        <form onSubmit={this.handleSubmit} action={this.handleSubmit} id="playlist_submit_form">
             <label htmlFor="userName">User Name</label>
             <input name="userName" id="userName" onChange={this.handleChange} type="text" value={this.state.userName} />
             <label htmlFor="songArtist">Artist/Band</label>
@@ -70,14 +58,12 @@ class PlayListForm extends Component {
             <input name="songTitle" onChange={this.handleChange} type="text" value={this.state.songTitle} />
             <label htmlFor="songNotes">Notes About Song</label>
             <input name="songNotes"  onChange={this.handleChange} type="text" value={this.state.songNotes} />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" id="submit_song"/>
         </form>
       </div>
-
     )
   }
 }
-
 
 
 export default PlayListForm;
